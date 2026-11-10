@@ -1,0 +1,4 @@
+# Windows-only bundled Python (used by run.bat on your PC). Render does not need it.
+runtime/
+__pycache__/
+*.pyc

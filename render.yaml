@@ -1,0 +1,14 @@
+# Optional Render Blueprint: New -> Blueprint -> pick this repo. (Manual setup in DEPLOY-RENDER.md works too.)
+services:
+  - type: web
+    name: cyberguard-ai
+    runtime: python
+    plan: free
+    buildCommand: python -m py_compile server.py
+    startCommand: python server.py
+    healthCheckPath: /health
+    envVars:
+      - key: MAX_UPLOAD_MB
+        value: "15"
+      - key: RATE_LIMIT_PER_MIN
+        value: "40"
